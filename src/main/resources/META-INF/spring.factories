@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.xykj.cas.config.SpringConfig,\
+  com.xykj.cas.apereo.ext.CustomAuthenticationConfiguration,\
+  com.xykj.cas.apereo.ext.CustomWebflowConfiguration,\
+  com.xykj.cas.config.DataSourceConfig

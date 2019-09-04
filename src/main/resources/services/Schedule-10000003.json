@@ -1,0 +1,9 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^http://192.168.1.17:8052/hoffice/.*",
+  "name" : "Schedule",
+  "theme" : "apereo",
+  "id" : 10000003,
+  "description" : "预约服务平台",
+  "evaluationOrder" : 1
+}

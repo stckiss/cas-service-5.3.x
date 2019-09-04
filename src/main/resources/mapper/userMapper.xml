@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.xykj.cas.dao.UserDAO">  
+    <resultMap id="BaseResultMap" type="com.xykj.cas.pojo.DsUserCas">  
+        <result column="id" property="id" />  
+        <result column="logon_name" property="logonName" /> 
+        <result column="eff_date" property="effDate" /> 
+        <result column="exp_date" property="expDate" /> 
+        <result column="last_name" property="lastName" /> 
+        <result column="first_name" property="firstName" /> 
+        <result column="region" property="region" /> 
+        <result column="sex" property="sex" /> 
+        <result column="account_status" property="accountStatus" /> 
+        <result column="phone" property="phone" /> 
+        <result column="email" property="email" /> 
+        <result column="lst_logon_date" property="lstLogonDate" /> 
+        <result column="logon_trial_date" property="logonTrialDate" /> 
+        <result column="lst_logon_result" property="lstLogonResult" /> 
+        <result column="logon_fail_cnt" property="logonFailCnt" /> 
+        <result column="pwd_change_date" property="pwdChangeDate" /> 
+        <result column="password" property="password" /> 
+        <result column="pwd_question" property="pwdQuestion" /> 
+        <result column="pwd_answer" property="pwdAnswer" /> 
+        <result column="org_id" property="orgId" /> 
+        <result column="status" property="status" /> 
+        <result column="update_time" property="updateTime" /> 
+        <result column="operator_id" property="operatorId" /> 
+        <result column="account_type" property="accountType" /> 
+    </resultMap>  
+  
+    <parameterMap id="DsUserCas" type="com.xykj.cas.pojo.DsUserCas"/>  
+  
+    <sql id="Base_Column_List">  
+        id,logon_name  
+    </sql>  
+    <select id="findByName" resultMap="BaseResultMap" parameterType="com.xykj.cas.pojo.DsUserCas">  
+        select  
+        *
+        from ds_user_cas  
+        where logon_name = #{logonName} 
+    </select> 
+    
+    <select id="updateUser" parameterType="com.xykj.cas.pojo.DsUserCas">
+    	update ds_user_cas set lst_logon_date = #{lstLogonDate} , update_time = #{updateTime} ,lst_logon_result=#{lstLogonResult},logon_fail_cnt=#{logonFailCnt} where id = #{id}
+    </select> 
+</mapper>  
